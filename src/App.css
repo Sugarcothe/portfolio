@@ -114,3 +114,10 @@ nav .burger {
   color: white;
   margin-top: 14vh;
 }
+
+/* About */
+
+.display-1 {
+  font-size: 5vh;
+  text-justify: auto;
+}

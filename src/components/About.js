@@ -12,14 +12,14 @@ export class About extends Component {
         <p className="display-1"
         >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur repudiandae aut quo maxime, quaerat ad est reprehenderit qui expedita atque asperiores eaque
         </p> 
-        <p>soluta saepe maiores autem ducimus blanditiis cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis dolore temporibus sint, aperiam hic expedita modi reiciendis </p> 
-        <p>quod fugiat ex laudantium, iusto blanditiis veritatis id optio quisquam a accusamus vitae perferendis! Non, consequatur rem? Pariatur non eveniet voluptatem porro minima?</p>
+        <p className="display-1">soluta saepe maiores autem ducimus blanditiis cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis dolore temporibus sint, aperiam hic expedita modi reiciendis </p> 
+        <p className="display-1">quod fugiat ex laudantium, iusto blanditiis veritatis id optio quisquam a accusamus vitae perferendis! Non, consequatur rem? Pariatur non eveniet voluptatem porro minima?</p>
     
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur repudiandae aut quo maxime, quaerat ad est reprehenderit qui expedita atque asperiores eaque soluta saepe maiores </p> 
+        <p className="display-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur repudiandae aut quo maxime, quaerat ad est reprehenderit qui expedita atque asperiores eaque soluta saepe maiores </p> 
 
-        <p>autem ducimus blanditiis cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis dolore temporibus sint, aperiam hic expedita modi reiciendis quod fugiat ex laudantium,</p> 
+        <p className="display-1">autem ducimus blanditiis cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis dolore temporibus sint, aperiam hic expedita modi reiciendis quod fugiat ex laudantium,</p> 
 
-        <p> iusto blanditiis veritatis id optio quisquam a accusamus vitae perferendis! Non, consequatur rem? Pariatur non eveniet voluptatem porro minima?</p>
+        <p className="display-1"> iusto blanditiis veritatis id optio quisquam a accusamus vitae perferendis! Non, consequatur rem? Pariatur non eveniet voluptatem porro minima?</p>
         
         </div>
       
