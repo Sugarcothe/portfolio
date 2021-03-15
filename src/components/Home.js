@@ -6,7 +6,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <div className="container">
+        <div className="container bg-dark">
           {/* Display */}
           <div className='display container text-center'>
             <h1 className='Jumbotron displayh'>Valentine Eze</h1>
@@ -16,8 +16,8 @@ export class Home extends Component {
           <div className="row pb-5 justify-content-center">
             <button className="btn m-2"><i class="fab fa-github"></i></button>
             <button className="btn m-2"><i class="fab fa-twitter"></i></button>
-            <button className="btn m-2"><i class="fab fa-linkedin-in"></i></button>
-            <button className="btn m-2"><i class="fas fa-file"></i> Resume</button>
+            <button className="btn m-2"><i class="fas fa-linkedin-in "></i></button>
+            <button className="btn m-2"><i class="fas fa-file "></i> Resume</button>
           </div> 
         </div>
 
