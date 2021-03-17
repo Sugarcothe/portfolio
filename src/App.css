@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   background-color: black;
+  font-family: 'Merienda', cursive;
 }
 
 /* Navbar */
@@ -65,8 +66,8 @@ nav .burger {
     display: block;
     top: 0;
     left: 0;
-    height: 100vh;
-    background-color: black;
+    height: 100%;
+    background-color: rgb(98, 94, 94);
     padding: 40px;
     width: 50%;
     transform: translateX(-500px);
@@ -91,16 +92,17 @@ nav .burger {
 }
 
 /* Display */
-.btn {
-  background-color: rgb(68, 67, 67);
+.btn, .card {
+  background-color: rgb(0, 0, 0);
   color: white;
+  border-color: white;
   
 }
 .displayh {
-  font-weight: bolder;
-  font-size: 13vh;
-  padding-top: 15vh;
+  padding-top: 5vh;
+  padding-left: 10vh;
   color: white;
+  justify-content: center;
 }
 
 .displayp {

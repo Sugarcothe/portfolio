@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import cons from './img/cons.jpg'
 
 export class Blog extends Component {
   render() {
     return (
-      <div className="jumbotron container">
-        <h3>This page is currently under construction</h3>
-        <p>Check back later</p>
+      <div className="mt-5 m-3 jumbotron container">
+        <h4 className='bg-light text-dark'>Check back later...</h4>
+        <img src={cons} className="img-fluid" alt=""/>
       </div>
     )
   }

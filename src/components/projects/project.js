@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import loanc from '../img/loancalc.jpg';
+import pidginbox from '../img/pidgin.jpg';
 import gbagun from '../img/gbagun.jpg';
 import vibers from '../img/vibers.jpg'
 
@@ -7,26 +7,35 @@ import vibers from '../img/vibers.jpg'
 export class project extends Component {
   render() {
     return (
-      <div className="container justify-content-center">
-        <h1 className="pb-5">PROJECTS</h1>
-        <div className="Project row">
+      <div className="container justify-content-center-end">
+        <h1 className="">PROJECTS</h1>
+        <div className="Project row text-justify">
         <div className="col-lg-4">
          
-         <img src={loanc} style={{width:300 }}alt=""/>
-          <h4>LOAN CALCULATOR</h4>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam hic tempora fugit accusamus, unde, sit ipsa, quisquam beatae quis enim doloribus assumenda natus et omnis. Doloribus asperiores quaerat omnis!</p>
+         <img src={pidginbox}className="mt-3 img-responsive"  style={{width:350 }}alt="my project"/>
+
+         
+          <h4 className="mt-2">CHAT APPLICATION</h4>
+          <p>The chat application was built in the react library. It has form validation, as to make sure that irregularites of form submit does not occur. It was built with current ES6 syntax and deployed on heroku app.</p>
+          <button className="btn mr-2"><a className='text-white' href="https://github.com/Sugarcothe/PidginTalk" target="_blank"><i className="fab fa-github"></i></a></button>
+          <button className="btn mr-2"><a className='text-white' href="http://pidginbox.herokuapp.com/" target="_blank"><i className="fas fa-link"></i></a></button>  
         </div>
+        
         <div className="col-lg-4">
 
-        <img src={gbagun} style={{width:300 }}alt=""/>
-          <h4>FOOD E-COMMERCE</h4>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam hic tempora fugit accusamus, unde, sit ipsa, quisquam beatae quis enim doloribus assumenda natus et omnis. Doloribus asperiores quaerat omnis!</p>
+        <img src={gbagun} className="mt-3 img-responsive"  style={{width:350 }}alt=""/>
+          <h4 className="mt-2">E-COMMERCE</h4>
+          <p>This is a food e-commerce project, which i built following a tutorial by Ryan Dhungel, and using MERN Stack React Node MongoDB powered E-Commerce App, with PayPal and Credit Card Payment along with Admin Dashboard. Built the API backend and then fetched all data in the frontend </p>
+          <button className="btn mr-2"><a className='text-white' href="https://github.com/Sugarcothe/ecommerce-file" target="_blank"><i className="fab fa-github"></i></a></button>
+          <button className="btn mr-2"><a className='text-white' href="" target="_blank"><i className="fas fa-link"></i></a></button>
         </div>
 
         <div className="col-lg-4">
-         <img src={vibers} style={{width:300 }}alt=""/>
-          <h4>SOCIAL NETWORK</h4>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam hic tempora fugit accusamus, unde, sit ipsa, quisquam beatae quis enim doloribus assumenda natus et omnis. Doloribus asperiores quaerat omnis!</p>
+         <img src={vibers} className="mt-3 img-responsive" style={{width:350 }}alt=""/>
+          <h4 className="mt-2">SOCIAL NETWORK</h4>
+          <p>This social network was built through the MERN fullstack and has integration of the backend with the frontend. This was built in using the current javascript syntax. I implememted  CRUD.</p>
+          <button className="btn mr-2"><a className='text-white' href="https://github.com/Sugarcothe/Sorosoke-frontend" target="_blank"><i className="fab fa-github"></i></a></button>
+          <button className="btn mr-2"><a className='text-white' href="http://pidginbox.herokuapp.com/" target="_blank"><i className="fas fa-link"></i></a></button>
         </div>
       </div>
       </div>
