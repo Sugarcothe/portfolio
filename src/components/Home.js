@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Project from './projects/project';
 import portImage from './img/avi.jpg';
 import Stacks from './stacks'
-import pdf from './img/cv1.pdf'
 import Contact from './Contact'
 
 
@@ -18,7 +17,7 @@ export class Home extends Component {
 
 
 
-           <div className='display col-lg-8 text-justify'>
+           <div className='display col-lg-8 text-justify mt-5'>
               <h1 className=' '>Valentine Eze</h1>
               <p className=" ">Full-stack Web Developer</p>
               <p className="">I am a self-taught fullstck web-developer. I thread on javascript and i base on MERN fullstack. I am learning more to finetune and polish my web development skillset. I am also a design enthusiast.</p>
@@ -32,13 +31,13 @@ export class Home extends Component {
 
                 <button className="btn bg-dark m-2"> <a className='text-white' href="https://www.linkedin.com/in/eze-valentine-751a40b2/"><i class="fab fa-linkedin-in"></i></a></button>
 
-                <button className="btn bg-dark m-2"> <a href={pdf} target="_blank"></a>CV</button>
+                <button className="btn bg-dark m-2"> <a className='text-white display-bold' href="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///C:/Users/m-cla/Downloads/Valentine's%20Resume.pdf" target="_blank">cv</a></button>
               </div> 
             </div> 
 
             <div className="col">
               
-              <img className="img-responsive img-fluid"  src={portImage} style={{width:400}} alt=""/>
+              <img className="img-responsive img-fluid"  src={portImage} style={{width:500}} alt=""/>
             </div>
      
           </div>

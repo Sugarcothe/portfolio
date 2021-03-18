@@ -25,7 +25,7 @@ export class project extends Component {
 
         <img src={gbagun} className="mt-3 img-responsive"  style={{width:300 }}alt=""/>
           <h5 className="mt-2">E-COMMERCE</h5>
-          <p>This is a food e-commerce project, which i built following a tutorial by Ryan Dhungel, and using MERN Stack React Node MongoDB powered E-Commerce App, with PayPal and Credit Card Payment along with Admin Dashboard. Built the API backend and then fetched all data in the frontend </p>
+          <p>This is a food e-commerce project i built using MERN Stack React Node MongoDB powered E-Commerce App, with PayPal and Credit Card Payment along with Admin Dashboard. Built the API backend and then fetched all data and integrated it in the frontend. </p>
           <button className="btn bg-dark mr-2"><a className='text-white' href="https://github.com/Sugarcothe/ecommerce-file" target="_blank"><i className="fab fa-github"></i></a></button>
           <button className="btn bg-dark mr-2"><a className='text-white' href="" target="_blank"><i className="fas fa-link"></i></a></button>
         </div>
