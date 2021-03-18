@@ -5,9 +5,9 @@ const Stacks = () => {
   return (
     <div className= "contaniner">
 
-        <div className="mt-5 text-center">
-          <h2 className=''>MY STACKS</h2>
-          <img src={stacks} className="img-responsive img-fluid p-3" style={{width: 500}} alt="stacks"/>
+        <div className="mt-5 text-center p-3">
+          <h4 className=''>MY STACKS</h4>
+          <img src={stacks} className="img-responsive img-fluid " style={{width: 500}} alt="stacks"/>
         </div>
 
     </div>

@@ -14,8 +14,12 @@ export class About extends Component {
           <div className="col-sm-3 sidenav">
             <h4>MY STORY</h4>
               <ul className="nav nav-pills nav-stacked">
-                <li className="a">normall</li>
-                <li className="a">normall</li>
+                <li className="a">My Tech Journey</li>
+                <li className="a">My Mothers Death</li>
+                <li className="a">Exit From The Seminary</li>
+                <li className="a">NYSC: My full Launch Into Tech</li>
+                <li className="a">My First Laptop</li>
+                <li className="a">Homeless And Move To Lagos</li>
               </ul>
           </div>
           <div className="div col-sm-9 text-justify">
@@ -23,13 +27,13 @@ export class About extends Component {
 
             <h4>MY TECH JOURNEY</h4>
             
-            <p className=" fluid">I have always been a tech enthusiast even though during my boyhood days I never did sciences, I wasn’t at class work. I knew I would later be in tech later on, because I love it and sci-fi movies interest me. As luck would have it, at the later years of my life I was to meet tech in the two places that form my fascination for it till date, which are my friends, especially TC and then my interest in logical positivism and logic I studies in my philosophy days.</p>
+            <p className=" fluid">I have always been a tech enthusiast even though during my boyhood days I never did sciences, I wasn’t at class work. I knew I would later be in tech later on, because I love it and sci-fi movies interest me. As luck would have it, at the later years of my life I was to meet tech in the two places that form my fascination for it till date, which are my friends, especially <a href="https://twitter.com/TochuksCode" class="">Theodore</a> and then my interest in logical positivism and logic I studies in my philosophy days.</p>
 
             <p>Earlier than when I ventured into tech I have done a whole of things that I didn’t find contentment on. I was once into radio OAP during an internship, I was once a shoe maker and made wonderful shoes, I was also en-route being a catholic priest. At some time in my life I played saxophone in churches, I even started a history blog which still run till date; I also at some time sold some old fairly used cloths (okirika in Nigerian slangs).</p>
 
             <p>Although I still count all those years as gain, because instead of sitting down and thinking of what to do, I knew I wanted to go into tech but then had no means. So my gallivanting years was never waste, I still use those knowledge till date</p>
             <img className='img-responsive img-fluid' src={image1} alt=""/>
-            <p><span className='text-muted pt-2'><small>I and Maxmillian and TC, during a holiday at TC house in 2013 december</small></span></p> 
+            <p><span className='text-muted pt-2'><small>I and Maxmillian and <a href="https://twitter.com/TochuksCode" class="">Theodore</a>, during a holiday at TC house in 2013 december</small></span></p> 
 
             <h4>MY MOTHERS DEATH</h4>
             
@@ -69,7 +73,7 @@ export class About extends Component {
             <h4>HOMELESS AND MOVE TO LAGOS</h4>
             
             <p className="fluid">
-            After service on returning to my state, a lot of things had changed, those things I wouldn’t want to mention, but I couldn’t find I could code from. I wanted to travel back to the northeast, but TC made some provisions for accommodation. He allowed me stay in their home and code from while he wasn’t even home. The family took me in and would treat me like a son. It was there that the idea of moving to Lagos actually came on and then TC made it possible.
+            After service on returning to my state, a lot of things had changed, those things I wouldn’t want to mention, but I couldn’t find I could code from. I wanted to travel back to the northeast, but <a href="https://twitter.com/TochuksCode" class="">Theodore</a> made some provisions for accommodation. He allowed me stay in their home and code from while he wasn’t even home. The family took me in and would treat me like a son. It was there that the idea of moving to Lagos actually came on and then <a href="https://twitter.com/TochuksCode" class="">Theodore</a> made it possible.
             </p>
             <img className='img-responsive img-fluid' src={image6} alt=""/>
             <p><span className='text-muted pt-2'><small>After a session with Enugu Tech community (THIRD FROM LEFT)</small></span></p> 
