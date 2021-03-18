@@ -16,12 +16,9 @@ export class Home extends Component {
           
           <div className="row">
 
-              <div className="col">
-              
-              <img className="imagee img-responsive img-fluid"  src={portImage} style={{width:400}} alt=""/>
-            </div>
 
-            <div className='display col-lg-8 text-justify'>
+
+           <div className='display col-lg-8 text-justify'>
               <h1 className=' '>Valentine Eze</h1>
               <p className=" ">Full-stack Web Developer</p>
               <p className="">I am a self-taught fullstck web-developer. I thread on javascript and i base on MERN fullstack. I am learning more to finetune and polish my web development skillset. I am also a design enthusiast.</p>
@@ -38,6 +35,11 @@ export class Home extends Component {
                 <button className="btn bg-dark m-2"> <a href={pdf} target="_blank"></a>CV</button>
               </div> 
             </div> 
+
+            <div className="col">
+              
+              <img className="img-responsive img-fluid"  src={portImage} style={{width:400}} alt=""/>
+            </div>
      
           </div>
         </div>
