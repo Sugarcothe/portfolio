@@ -57,15 +57,15 @@ nav .burger {
   
   nav .nav-links {
     position: absolute;
-    flex-flow: column nowrap;
+    flex-flow: column;
     display: block;
     top: 0;
     left: 0;
-    height: 30%;
+    height: 44%;
     background-color: rgba(0, 0, 0,1);
     color: white;
-    padding: 20px;
-    width: 30%;
+    padding: 3px;
+    width: 50%;
     transform: translateX(-500px);
     transition: 0.5s ease-in-out;
     opacity: 1;

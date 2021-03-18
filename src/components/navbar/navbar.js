@@ -14,7 +14,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link className="text-reset" to="/About">Tech-Journey</Link>
+              <Link className="text-reset" to="/About">Journey</Link>
             </li>
             
           </ul>
