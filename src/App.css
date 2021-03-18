@@ -1,9 +1,7 @@
 * {
-  margin: 0;
+  font-family: 'Dosis', sans-serif;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
-  font-family: 'Merienda', cursive;
 }
 
 /* Navbar */
@@ -21,8 +19,7 @@ nav {
   justify-content: space-around;
   min-height: 10vh;
   align-items: center;
-  background-color: BLACK;
-  color: white;
+  
 }
 
 nav .logo {
@@ -42,12 +39,9 @@ nav .nav-links {
 nav .nav-links a {
   font-size: 15px;
   font-weight: normal;
-  color: white;
   cursor: pointer;
-}
 
-nav .nav-links a:hover {
-  border-bottom: 1px solid #fff;
+
 }
 
 nav .burger {
@@ -63,20 +57,24 @@ nav .burger {
   
   nav .nav-links {
     position: absolute;
+    flex-flow: column nowrap;
     display: block;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: rgb(98, 94, 94);
+    background-color: rgba(0, 0, 0,1);
+    color: white;
     padding: 40px;
     width: 50%;
     transform: translateX(-500px);
-    transition: 0.7s ease-in-out;
+    transition: 0.5s ease-in-out;
+    opacity: 1;
   }
 
   nav .nav-links li {
     padding: 25px;
-    border-bottom: 1px solid #ccc;
+  
+
   }
 
   nav .nav-links li:last-of-type {
@@ -85,6 +83,7 @@ nav .burger {
 
   nav .nav-links a:hover {
     border-bottom: 0px solid #fff;
+
   }
  
 
@@ -92,8 +91,8 @@ nav .burger {
 }
 
 /* Display */
-.btn, .card {
-  background-color: rgb(0, 0, 0);
+.btn {
+  
   color: white;
   border-color: white;
   
@@ -110,17 +109,175 @@ nav .burger {
   color:white;
 }
 
-/* Project */
-
-.project {
-  background-color: black;
-  color: white;
-  margin-top: 14vh;
-}
-
 /* About */
 
 .display-1 {
   font-size: 5vh;
   text-justify: auto;
+}
+
+
+
+
+
+
+
+/* under here is the styling for dark and light mode */
+.App {
+  align-content: center;
+  justify-content: center;
+}
+
+.cv-button{
+  text-emphasis: none;
+  text-decoration: none;
+  color: white;
+
+}
+
+
+.stacks-container {
+  text-align: center;
+  padding-top: 0%;
+}
+
+.project-container {
+  background-color: rgb(120, 115, 115);;
+  text-align: center;
+  padding-top: 0%;
+}
+
+
+main {
+  padding: 0.5em;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  height: 90vh;
+}
+
+h1 {
+  margin: 0;
+}
+
+.toggle {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"].checkbox {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+}
+
+input[type="checkbox"].checkbox:checked + label {
+  left: 30px;
+}
+
+input[type="checkbox"].checkbox:focus-visible {
+  outline: solid 2px white;
+}
+
+input[type="checkbox"].checkbox + label {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2px;
+  background: #fff;
+  opacity: 0.9;
+  background-color: rgb(44, 171, 171);
+}
+
+.toggle-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.toggle-container > span {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.toggle-container > span:last-child {
+  margin-top: 5px;
+}
+
+.light-mode {
+  background-color:white;
+  color: black;
+  transition: background-color 5.0s ease-out;
+  
+}
+
+.dark-mode {
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  transition: background-color 5.0s ease-out;
+}
+
+@media (max-width: 650px) {
+  .light-mode {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transition: background-color 5.0s ease-out;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 5.0s ease-out;
+  }
+  .h1-one {
+    font-size: 22px;
+    margin-top: 5px;
+
+  }
+
+  .p-one {
+    font-size: 13px;
+    font-weight: none;
+  }
+ 
+}
+
+.d-jumbotron {
+  align-content: flex-end;
+  
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
 }

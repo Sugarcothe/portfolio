@@ -1,28 +1,28 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 
-function Navbar() {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
       <nav>
         <div className="logo">SugarCodes</div>
-          <ul className="nav-links" style={{transform: open ? "translateX(0px)" : ""}}>
+          <ul className="nav-links a link-unstyled" style={{transform: open ? "translateX(0px)" : ""}}>
             <li>
-              <Link to="/">Home</Link>
+              <Link className="text-reset" to="/">Home</Link>
             </li>
 
             <li>
-              <Link to="/About">About</Link>
+              <Link className="text-reset" to="/About">About</Link>
             </li>
 
             <li>
-              <Link to="/Blog">Blog</Link>
+              <Link className="text-reset" to="/Blog">Blog</Link>
             </li>
 
             <li>
-              <Link to="Contact">Contact</Link>
+              <Link className="text-reset" to="Contact">Contact</Link>
             </li>
             
           </ul>
