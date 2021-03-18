@@ -12,7 +12,7 @@ export class About extends Component {
       <div className="container-fluid">
         <div className="row content">
           <div className="col-sm-3 sidenav">
-            <h4>MY STORY</h4>
+            <h4>TIMELINE</h4>
               <ul className="nav nav-pills nav-stacked">
                 <li className="a">My Tech Journey</li>
                 <li className="a">My Mothers Death</li>

@@ -44,6 +44,10 @@ nav .nav-links a {
 
 }
 
+.imagee {
+  padding-top: 7rem;
+}
+
 nav .burger {
   display: none;
   font-size: 28px;
@@ -64,7 +68,7 @@ nav .burger {
     height: 20%;
     background-color: rgba(0, 0, 0,1);
     color: white;
-    padding: 2px;
+    padding: 2Opx;
     width: 37%;
     transform: translateX(-500px);
     transition: 0.7s ease-in-out;

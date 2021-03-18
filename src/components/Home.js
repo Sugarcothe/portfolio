@@ -13,12 +13,12 @@ export class Home extends Component {
       <div>
         <div className="container">
           {/* Display */}
-          <hr/>
+          
           <div className="row">
 
               <div className="col">
               
-              <img className="img-responsive img-fluid"  src={portImage} style={{width:400}} alt=""/>
+              <img className="imagee img-responsive img-fluid"  src={portImage} style={{width:400}} alt=""/>
             </div>
 
             <div className='display col-lg-8 text-justify'>
