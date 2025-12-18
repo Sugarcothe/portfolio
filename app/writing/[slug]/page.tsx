@@ -12,6 +12,7 @@ interface Blog {
   content: string;
   date: string;
   likes: number;
+  imageUrl?: string;
 }
 
 async function getBlog(slug: string): Promise<Blog | null> {
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
   
-  const imageUrl = (blog as any).imageUrl || "/my.png";
+  const imageUrl = blog.imageUrl || "/my.png";
   
   return {
     title: `${blog.title} - Valentine Eze`,

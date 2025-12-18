@@ -11,6 +11,7 @@ interface Blog {
   excerpt: string;
   content: string;
   date: string;
+  imageUrl?: string;
 }
 
 export default function AdminBlog() {
@@ -161,7 +162,7 @@ export default function AdminBlog() {
       excerpt: blog.excerpt,
       content: blog.content,
       date: blog.date,
-      imageUrl: (blog as any).imageUrl || "",
+      imageUrl: blog.imageUrl || "",
     });
     setEditingId(blog._id);
     window.scrollTo({ top: 0, behavior: "smooth" });

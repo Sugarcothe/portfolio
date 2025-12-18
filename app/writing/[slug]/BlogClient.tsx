@@ -12,6 +12,7 @@ interface Blog {
   content: string;
   date: string;
   likes: number;
+  imageUrl?: string;
 }
 
 export default function BlogClient({ blog }: { blog: Blog }) {
@@ -116,9 +117,9 @@ export default function BlogClient({ blog }: { blog: Blog }) {
           <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-4 mt-4`}>{blog.title}</h1>
           <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mb-8`}>{blog.date}</p>
 
-          {(blog as any).imageUrl && (
+          {blog.imageUrl && (
             <img 
-              src={(blog as any).imageUrl} 
+              src={blog.imageUrl} 
               alt={blog.title} 
               className={`w-full h-auto mb-8 border-2 ${isDarkMode ? 'border-white' : 'border-black'}`}
             />
