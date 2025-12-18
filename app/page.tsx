@@ -52,7 +52,7 @@ export default function Home() {
       }`}
     >
       <nav
-        className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${
+        className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-4 border-b ${
           isDarkMode ? "border-white" : "border-gray-200"
         }`}
       >
