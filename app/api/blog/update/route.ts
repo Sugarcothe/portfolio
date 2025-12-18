@@ -4,7 +4,7 @@ import clientPromise from "@/lib/mongodb";
 
 export async function PUT(request: Request) {
   try {
-    const { id, title, slug, excerpt, content, date } = await request.json();
+    const { id, title, slug, excerpt, content, date, imageUrl } = await request.json();
 
     if (!id || !title || !slug || !excerpt || !content || !date) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
@@ -15,7 +15,7 @@ export async function PUT(request: Request) {
     
     const result = await db.collection("blogs").updateOne(
       { _id: new ObjectId(id) },
-      { $set: { title, slug, excerpt, content, date, updatedAt: new Date() } }
+      { $set: { title, slug, excerpt, content, date, imageUrl: imageUrl || null, updatedAt: new Date() } }
     );
 
     if (result.matchedCount === 0) {

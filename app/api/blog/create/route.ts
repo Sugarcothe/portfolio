@@ -3,7 +3,7 @@ import clientPromise from "@/lib/mongodb";
 
 export async function POST(request: Request) {
   try {
-    const { title, slug, excerpt, content, date } = await request.json();
+    const { title, slug, excerpt, content, date, imageUrl } = await request.json();
 
     if (!title || !slug || !excerpt || !content || !date) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
@@ -23,6 +23,7 @@ export async function POST(request: Request) {
       excerpt,
       content,
       date,
+      imageUrl: imageUrl || null,
       likes: 0,
       createdAt: new Date(),
     });

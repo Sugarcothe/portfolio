@@ -29,7 +29,8 @@ async function getBlog(slug: string): Promise<Blog | null> {
       excerpt: blog.excerpt,
       content: blog.content,
       date: blog.date,
-      likes: blog.likes || 0
+      likes: blog.likes || 0,
+      imageUrl: blog.imageUrl || null
     };
   } catch (error) {
     return null;
@@ -47,6 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
   
+  const imageUrl = (blog as any).imageUrl || "/my.png";
+  
   return {
     title: `${blog.title} - Valentine Eze`,
     description: blog.excerpt,
@@ -57,11 +60,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: blog.date,
       authors: ["Valentine Eze"],
+      images: [{
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: blog.title,
+      }],
     },
     twitter: {
       card: "summary_large_image",
       title: blog.title,
       description: blog.excerpt,
+      images: [imageUrl],
     },
   };
 }

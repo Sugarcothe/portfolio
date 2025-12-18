@@ -24,8 +24,11 @@ export default function AdminBlog() {
     excerpt: "",
     content: "",
     date: new Date().toISOString().split('T')[0],
+    imageUrl: "",
   });
   const [notifySubscribers, setNotifySubscribers] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
 
   const generateSlug = (title: string) => {
     return title
@@ -57,15 +60,57 @@ export default function AdminBlog() {
     }
   };
 
+  const uploadImage = async (): Promise<string> => {
+    if (!imageFile) {
+      console.log('No image file selected, using existing imageUrl:', formData.imageUrl);
+      return formData.imageUrl;
+    }
+    
+    console.log('Uploading image file:', imageFile.name);
+    setUploading(true);
+    try {
+      const uploadFormData = new FormData();
+      uploadFormData.append('file', imageFile);
+      
+      const token = localStorage.getItem('adminToken');
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` },
+        body: uploadFormData
+      });
+      
+      if (res.ok) {
+        const data = await res.json();
+        console.log('Image uploaded successfully:', data.url);
+        return data.url;
+      } else {
+        console.error('Upload failed with status:', res.status);
+        const errorData = await res.json();
+        console.error('Upload error:', errorData);
+        alert('Image upload failed. Saving blog without image.');
+        return formData.imageUrl; // Continue without new image
+      }
+    } catch (error) {
+      console.error('Image upload failed:', error);
+      alert('Image upload failed. Saving blog without image.');
+      return formData.imageUrl; // Continue without new image
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      const imageUrl = await uploadImage();
+      console.log('Final imageUrl for blog:', imageUrl);
       const url = editingId ? "/api/blog/update" : "/api/blog/create";
       const method = editingId ? "PUT" : "POST";
       const slug = generateSlug(formData.title);
-      const body = editingId ? { ...formData, slug, id: editingId } : { ...formData, slug };
+      const body = editingId ? { ...formData, imageUrl, slug, id: editingId } : { ...formData, imageUrl, slug };
+      console.log('Sending blog data:', body);
 
       const res = await fetch(url, {
         method,
@@ -94,9 +139,10 @@ export default function AdminBlog() {
           }
         }
         
-        setFormData({ title: "", excerpt: "", content: "", date: new Date().toISOString().split('T')[0] });
+        setFormData({ title: "", excerpt: "", content: "", date: new Date().toISOString().split('T')[0], imageUrl: "" });
         setEditingId(null);
         setNotifySubscribers(false);
+        setImageFile(null);
         fetchBlogs();
         alert(editingId ? "Blog updated!" : "Blog created!");
       } else {
@@ -115,6 +161,7 @@ export default function AdminBlog() {
       excerpt: blog.excerpt,
       content: blog.content,
       date: blog.date,
+      imageUrl: (blog as any).imageUrl || "",
     });
     setEditingId(blog._id);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,9 +187,10 @@ export default function AdminBlog() {
   };
 
   const handleCancel = () => {
-    setFormData({ title: "", excerpt: "", content: "", date: new Date().toISOString().split('T')[0] });
+    setFormData({ title: "", excerpt: "", content: "", date: new Date().toISOString().split('T')[0], imageUrl: "" });
     setEditingId(null);
     setNotifySubscribers(false);
+    setImageFile(null);
   };
 
   if (!isAuth) return null;
@@ -194,6 +242,21 @@ export default function AdminBlog() {
           </div>
 
           <div>
+            <label className={`block text-sm mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>Featured Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+              className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-2 focus:outline-none focus:ring-2`}
+            />
+            {formData.imageUrl && (
+              <div className="mt-2">
+                <img src={formData.imageUrl} alt="Current image" className="w-32 h-32 object-cover border" />
+              </div>
+            )}
+          </div>
+
+          <div>
             <label className={`block text-sm mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>Content</label>
             <textarea
               value={formData.content}
@@ -220,10 +283,10 @@ export default function AdminBlog() {
           <div className="flex gap-4">
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || uploading}
               className={`${isDarkMode ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'} px-8 py-3 transition disabled:opacity-50`}
             >
-              {loading ? "Saving..." : editingId ? "Update Post" : "Publish Post"}
+              {uploading ? "Uploading..." : loading ? "Saving..." : editingId ? "Update Post" : "Publish Post"}
             </button>
             {editingId && (
               <button

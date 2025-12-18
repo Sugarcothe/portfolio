@@ -116,6 +116,14 @@ export default function BlogClient({ blog }: { blog: Blog }) {
           <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-4 mt-4`}>{blog.title}</h1>
           <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mb-8`}>{blog.date}</p>
 
+          {(blog as any).imageUrl && (
+            <img 
+              src={(blog as any).imageUrl} 
+              alt={blog.title} 
+              className={`w-full h-auto mb-8 border-2 ${isDarkMode ? 'border-white' : 'border-black'}`}
+            />
+          )}
+
           <div className={`prose prose-sm md:prose-base max-w-none ${isDarkMode ? 'text-white' : 'text-black'} font-mono opacity-80 leading-relaxed whitespace-pre-line`}>{blog.content}</div>
 
           <div className={`flex items-center gap-6 mt-12 pt-8 border-t ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
