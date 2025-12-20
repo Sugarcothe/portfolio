@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div
-      className={`min-h-screen font-mono transition-colors ${
+      className={`min-h-screen font-mono ${
         isDarkMode ? "bg-black text-white" : "bg-[#E9E9E9] text-black"
       }`}
     >

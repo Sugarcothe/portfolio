@@ -95,7 +95,7 @@ export default function Work() {
   }, [showLanguageModal, showThemeModal]);
 
   return (
-    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
+    <div className={`min-h-screen font-mono ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
