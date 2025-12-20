@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Share2, ThumbsUp, ArrowUp, Globe, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../useTheme";
+import { useLanguage, languages, Language } from "../../useLanguage";
+import { useTranslation } from "../../translations";
 
 interface Blog {
   _id: string;
@@ -24,6 +26,8 @@ export default function BlogClient({ blog }: { blog: Blog }) {
   const [showThemeModal, setShowThemeModal] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('EN');
   const { isDarkMode, toggleTheme } = useTheme();
+  const { currentLanguage: lang, changeLanguage } = useLanguage();
+  const t = useTranslation(lang);
 
   useEffect(() => {
     const liked = localStorage.getItem(`liked_${blog._id}`);
@@ -104,15 +108,15 @@ export default function BlogClient({ blog }: { blog: Blog }) {
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Work</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Writing</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Contact</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.work}</Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.contact}</Link>
         </div>
       </nav>
 
       <main className="flex justify-center px-4 md:px-12 py-8 md:py-12">
         <article className="w-full max-w-2xl mx-auto">
-          <Link href="/writing" className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 hover:opacity-100 mb-6 inline-block`}>← Back to Writing</Link>
+          <Link href="/writing" className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 hover:opacity-100 mb-6 inline-block`}>{t.backToWriting}</Link>
 
           <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-4 mt-4`}>{blog.title}</h1>
           <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mb-8`}>{blog.date}</p>
@@ -130,17 +134,17 @@ export default function BlogClient({ blog }: { blog: Blog }) {
           <div className={`flex items-center gap-6 mt-12 pt-8 border-t ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
             <button onClick={handleLike} disabled={hasLiked} className={`flex items-center gap-2 px-4 py-2 border-2 transition ${hasLiked ? 'border-blue-600 bg-blue-50 text-blue-600' : isDarkMode ? 'border-white hover:bg-white hover:text-black' : 'border-black hover:bg-black hover:text-white'} ${hasLiked ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
               <ThumbsUp size={16} className={hasLiked ? 'fill-current' : ''} />
-              <span className="text-sm font-mono">{likeCount} {likeCount === 1 ? 'Like' : 'Likes'}</span>
+              <span className="text-sm font-mono">{likeCount} {likeCount === 1 ? t.like : t.likes}</span>
             </button>
 
             <div className="relative">
               <button onClick={handleShare} className={`flex items-center gap-2 px-4 py-2 border-2 ${isDarkMode ? 'border-white hover:bg-white hover:text-black' : 'border-black hover:bg-black hover:text-white'} transition`}>
                 <Share2 size={16} />
-                <span className="text-sm font-mono">Share</span>
+                <span className="text-sm font-mono">{t.share}</span>
               </button>
               {showTooltip && (
                 <div className={`absolute -top-12 left-1/2 transform -translate-x-1/2 ${isDarkMode ? 'bg-white text-black' : 'bg-black text-white'} px-3 py-1 text-sm font-mono rounded whitespace-nowrap`}>
-                  Link copied!
+                  {t.linkCopied}
                   <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${isDarkMode ? 'border-t-white' : 'border-t-black'}`}></div>
                 </div>
               )}
@@ -155,10 +159,23 @@ export default function BlogClient({ blog }: { blog: Blog }) {
             <Globe size={20} />
           </button>
           {showLanguageModal && (
-            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded p-2 shadow-lg min-w-24`}>
-              <button onClick={() => { setCurrentLanguage('EN'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'EN' ? 'font-bold' : ''}`}>EN</button>
-              <button onClick={() => { setCurrentLanguage('ES'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'ES' ? 'font-bold' : ''}`}>ES</button>
-              <button onClick={() => { setCurrentLanguage('FR'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'FR' ? 'font-bold' : ''}`}>FR</button>
+            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded-lg p-2 shadow-lg min-w-[120px]`}>
+              {Object.entries(languages).map(([code, name]) => (
+                <button
+                  key={code}
+                  onClick={() => {
+                    changeLanguage(code as Language);
+                    setShowLanguageModal(false);
+                  }}
+                  className={`block w-full text-left px-3 py-2 text-sm font-mono transition-colors ${
+                    lang === code 
+                      ? (isDarkMode ? 'bg-white text-black' : 'bg-black text-white')
+                      : (isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100')
+                  }`}
+                >
+                  {name}
+                </button>
+              ))}
             </div>
           )}
         </div>

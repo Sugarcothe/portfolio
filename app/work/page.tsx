@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowUp, Globe, Sun, Moon } from "lucide-react";
 import { useTheme } from "../useTheme";
+import { useLanguage, languages, Language } from "../useLanguage";
+import { useTranslation } from "../translations";
 
 const workExperience = [
   {
@@ -65,8 +67,9 @@ export default function Work() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showThemeModal, setShowThemeModal] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('EN');
   const { isDarkMode, toggleTheme } = useTheme();
+  const { currentLanguage, changeLanguage } = useLanguage();
+  const t = useTranslation(currentLanguage);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,15 +99,15 @@ export default function Work() {
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>Work</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Writing</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Contact</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>{t.work}</Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.contact}</Link>
         </div>
       </nav>
 
       <main className="flex justify-center px-4 md:px-12 py-8 md:py-12">
         <div className="w-full max-w-2xl mx-auto">
-          <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>Work Experience</h1>
+          <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>{t.workExperienceTitle}</h1>
 
           <div className="space-y-10">
             {workExperience.map((job, index) => (
@@ -127,7 +130,7 @@ export default function Work() {
           </div>
 
           <div className="mt-16">
-            <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>Live Projects</h1>
+            <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>{t.liveProjects}</h1>
             <div className="space-y-6">
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://evenx.site" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>evenx.site</a>
@@ -161,7 +164,7 @@ export default function Work() {
           </div>
 
           <div className="mt-16">
-            <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>Certificates</h1>
+            <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>{t.certificates}</h1>
             <ul className={`list-disc list-inside space-y-2 text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 leading-relaxed ml-4`}>
               <li>Cloud DevOps Engineer</li>
               <li>Software Development Fundamentals</li>
@@ -185,10 +188,23 @@ export default function Work() {
             <Globe size={20} />
           </button>
           {showLanguageModal && (
-            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded p-2 shadow-lg min-w-24`}>
-              <button onClick={() => { setCurrentLanguage('EN'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'EN' ? 'font-bold' : ''}`}>EN</button>
-              <button onClick={() => { setCurrentLanguage('ES'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'ES' ? 'font-bold' : ''}`}>ES</button>
-              <button onClick={() => { setCurrentLanguage('FR'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'FR' ? 'font-bold' : ''}`}>FR</button>
+            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded-lg p-2 shadow-lg min-w-[120px]`}>
+              {Object.entries(languages).map(([code, name]) => (
+                <button
+                  key={code}
+                  onClick={() => {
+                    changeLanguage(code as Language);
+                    setShowLanguageModal(false);
+                  }}
+                  className={`block w-full text-left px-3 py-2 text-sm font-mono transition-colors ${
+                    currentLanguage === code 
+                      ? (isDarkMode ? 'bg-white text-black' : 'bg-black text-white')
+                      : (isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100')
+                  }`}
+                >
+                  {name}
+                </button>
+              ))}
             </div>
           )}
         </div>

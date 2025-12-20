@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowUp, Globe, Sun, Moon, MapPin } from "lucide-react";
 import { useTheme } from "./useTheme";
+import { useLanguage, languages, Language } from "./useLanguage";
+import { useTranslation } from "./translations";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -11,8 +13,9 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showThemeModal, setShowThemeModal] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("EN");
   const { isDarkMode, toggleTheme } = useTheme();
+  const { currentLanguage, changeLanguage } = useLanguage();
+  const t = useTranslation(currentLanguage);
 
   useEffect(() => {
     setMounted(true);
@@ -71,7 +74,7 @@ export default function Home() {
               isDarkMode ? "text-white" : "text-black"
             } hover:underline decoration-2 underline-offset-4`}
           >
-            Work
+            {t.work}
           </Link>
           <Link
             href="/writing"
@@ -79,7 +82,7 @@ export default function Home() {
               isDarkMode ? "text-white" : "text-black"
             } hover:underline decoration-2 underline-offset-4`}
           >
-            Writing
+            {t.writing}
           </Link>
           <Link
             href="/contact"
@@ -87,7 +90,7 @@ export default function Home() {
               isDarkMode ? "text-white" : "text-black"
             } hover:underline decoration-2 underline-offset-4`}
           >
-            Contact
+            {t.contact}
           </Link>
         </div>
       </nav>
@@ -122,12 +125,12 @@ export default function Home() {
                   isDarkMode ? "text-white" : "text-black"
                 } opacity-70`}
               >
-                Software Developer
+                {t.softwareDeveloper}
               </h2>
               <div className="flex items-center gap-1 mt-1">
                 <MapPin size={14} className={`${isDarkMode ? "text-white" : "text-black"} opacity-60`} />
                 <p className={`text-sm font-mono ${isDarkMode ? "text-white" : "text-black"} opacity-60`}>
-                  Glasgow, Scotland, UK
+                  {t.location}
                 </p>
               </div>
             </div>
@@ -140,48 +143,19 @@ export default function Home() {
               } leading-relaxed font-mono opacity-80 space-y-4`}
             >
               <p>
-                With over six years of experience in software development and
-                infrastructure optimization, I focus on building reliable,
-                scalable systems that solve real business problems. My work
-                spans system design, development, deployment, and maintenance,
-                with strong attention to performance, security, and long-term
-                maintainability.
+                {t.aboutDescription1}
               </p>
               <p>
-                I am proficient in automation, cloud technologies, and CI/CD
-                practices, using them to improve delivery speed and operational
-                reliability. I work comfortably across teams, translating
-                business requirements into robust technical solutions, and I am
-                driven by building resilient systems that enable organizations
-                to scale efficiently.
+                {t.aboutDescription2}
               </p>
-              <p className="font-medium">Selected work and projects:</p>
+              <p className="font-medium">{t.selectedWork}</p>
               <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>
-                  Built AI-powered platforms such as evenx.site and
-                  the-congress.vercel.app.
-                </li>
-                <li>
-                  Developed large-scale web applications including
-                  Votemaster.co.uk, Pollmaster.co.uk.com, wevesting.vercel.app,
-                  and PrevailAgency.ie.
-                </li>
-                <li>
-                  Designed and deployed hotel and business management systems
-                  with integrated payments (Stripe)
-                </li>
-                <li>
-                  Deployed and managed applications on AWS, with CI/CD pipelines
-                  using GitHub Actions
-                </li>
-                <li>
-                  Optimized databases and resolved performance issues under high
-                  traffic
-                </li>
-                <li>
-                  Served as a full-stack and cloud computing instructor and
-                  technical consultant
-                </li>
+                <li>{t.project1}</li>
+                <li>{t.project2}</li>
+                <li>{t.project3}</li>
+                <li>{t.project4}</li>
+                <li>{t.project5}</li>
+                <li>{t.project6}</li>
               </ul>
             </div>
           </div>
@@ -192,21 +166,21 @@ export default function Home() {
                 isDarkMode ? "text-white" : "text-black"
               } font-bold mb-6`}
             >
-              How I Can Help
+              {t.howICanHelp}
             </h3>
             <ul
               className={`list-disc list-inside space-y-2 text-sm md:text-base ${
                 isDarkMode ? "text-white" : "text-black"
               } leading-relaxed font-mono opacity-80 ml-4`}
             >
-              <li>Technical Architecture & Strategic Planning</li>
-              <li>Engineering Leadership & Team Mentorship</li>
-              <li>Distributed Systems Architecture</li>
-              <li>System Modernization & Migration Services</li>
-              <li>Performance Engineering & Scalability Solutions</li>
-              <li>Technical Advisory & Code Review Services</li>
-              <li>Cloud Infrastructure & Deployment Strategy</li>
-              <li>Regulatory Compliance & Data Protection (UK/US Standards)</li>
+              <li>{t.service1}</li>
+              <li>{t.service2}</li>
+              <li>{t.service3}</li>
+              <li>{t.service4}</li>
+              <li>{t.service5}</li>
+              <li>{t.service6}</li>
+              <li>{t.service7}</li>
+              <li>{t.service8}</li>
             </ul>
           </div>
 
@@ -219,7 +193,7 @@ export default function Home() {
                   : "border-black text-black hover:bg-black hover:text-white"
               } px-8 py-3 text-base font-mono transition-all duration-300`}
             >
-              Schedule a Meeting
+              {t.scheduleCall}
             </button>
           </div>
         </div>
@@ -271,47 +245,24 @@ export default function Home() {
             <div
               className={`absolute bottom-14 right-0 ${
                 isDarkMode ? "bg-black border-white" : "bg-white border-black"
-              } border-2 rounded p-2 shadow-lg min-w-24`}
+              } border-2 rounded-lg p-2 shadow-lg min-w-[120px]`}
             >
-              <button
-                onClick={() => {
-                  setCurrentLanguage("EN");
-                  setShowLanguageModal(false);
-                }}
-                className={`block w-full text-left px-3 py-1 text-sm font-mono ${
-                  isDarkMode
-                    ? "text-white hover:bg-gray-800"
-                    : "text-black hover:bg-gray-100"
-                } ${currentLanguage === "EN" ? "font-bold" : ""}`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => {
-                  setCurrentLanguage("ES");
-                  setShowLanguageModal(false);
-                }}
-                className={`block w-full text-left px-3 py-1 text-sm font-mono ${
-                  isDarkMode
-                    ? "text-white hover:bg-gray-800"
-                    : "text-black hover:bg-gray-100"
-                } ${currentLanguage === "ES" ? "font-bold" : ""}`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => {
-                  setCurrentLanguage("FR");
-                  setShowLanguageModal(false);
-                }}
-                className={`block w-full text-left px-3 py-1 text-sm font-mono ${
-                  isDarkMode
-                    ? "text-white hover:bg-gray-800"
-                    : "text-black hover:bg-gray-100"
-                } ${currentLanguage === "FR" ? "font-bold" : ""}`}
-              >
-                FR
-              </button>
+              {Object.entries(languages).map(([code, name]) => (
+                <button
+                  key={code}
+                  onClick={() => {
+                    changeLanguage(code as Language);
+                    setShowLanguageModal(false);
+                  }}
+                  className={`block w-full text-left px-3 py-2 text-sm font-mono transition-colors ${
+                    currentLanguage === code 
+                      ? (isDarkMode ? 'bg-white text-black' : 'bg-black text-white')
+                      : (isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100')
+                  }`}
+                >
+                  {name}
+                </button>
+              ))}
             </div>
           )}
         </div>

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import { ArrowUp, Globe, Sun, Moon } from "lucide-react";
 import { useTheme } from "../useTheme";
+import { useLanguage, languages, Language } from "../useLanguage";
+import { useTranslation } from "../translations";
 
 export default function Contact() {
   const [showCalendly, setShowCalendly] = useState(false);
@@ -16,6 +18,8 @@ export default function Contact() {
   const [showThemeModal, setShowThemeModal] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('EN');
   const { isDarkMode, toggleTheme } = useTheme();
+  const { currentLanguage: lang, changeLanguage } = useLanguage();
+  const t = useTranslation(lang);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +66,7 @@ export default function Contact() {
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
-      setError("Failed to send message. Please try again.");
+      setError(t.messageError);
     } finally {
       setLoading(false);
     }
@@ -73,29 +77,29 @@ export default function Contact() {
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Work</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>Writing</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>Contact</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.work}</Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>{t.contact}</Link>
         </div>
       </nav>
 
       <main className="flex justify-center px-4 md:px-12 py-8 md:py-12">
         <div className="w-full max-w-2xl mx-auto">
-          <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>Get in Touch</h1>
+          <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>{t.getInTouch}</h1>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className={`border-2 ${isDarkMode ? 'border-white' : 'border-black'} p-6`}>
-              <h2 className={`text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-2`}>Send a Message</h2>
-              <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 font-mono`}>Drop me an email about your project or question.</p>
+              <h2 className={`text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-2`}>{t.sendMessage}</h2>
+              <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 font-mono`}>{t.sendMessageDesc}</p>
             </div>
             <div className={`border-2 ${isDarkMode ? 'border-white' : 'border-black'} p-6`}>
-              <h2 className={`text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-4`}>Book a Meeting</h2>
-              <button onClick={() => setShowCalendly(true)} className={`border-2 ${isDarkMode ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'} px-6 py-2 text-sm font-mono transition-all duration-300 w-full`}>Schedule on Calendly</button>
+              <h2 className={`text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-4`}>{t.bookMeeting}</h2>
+              <button onClick={() => setShowCalendly(true)} className={`border-2 ${isDarkMode ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'} px-6 py-2 text-sm font-mono transition-all duration-300 w-full`}>{t.scheduleCall}</button>
             </div>
           </div>
 
           {submitted && (
-            <div className="mb-6 p-4 border-2 border-green-600 bg-green-50 text-green-800 font-mono">Message sent successfully! I'll get back to you soon.</div>
+            <div className="mb-6 p-4 border-2 border-green-600 bg-green-50 text-green-800 font-mono">{t.messageSent}</div>
           )}
 
           {error && (
@@ -104,19 +108,19 @@ export default function Contact() {
 
           <form onSubmit={handleSubmit} className={`border-2 ${isDarkMode ? 'border-white' : 'border-black'} p-6 md:p-8 space-y-6`}>
             <div>
-              <label htmlFor="name" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>Name</label>
+              <label htmlFor="name" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.name}</label>
               <input type="text" id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
             </div>
             <div>
-              <label htmlFor="email" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>Email</label>
+              <label htmlFor="email" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.email}</label>
               <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
             </div>
             <div>
-              <label htmlFor="message" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>Message</label>
+              <label htmlFor="message" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.message}</label>
               <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={6} className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2 resize-none`} />
             </div>
             <button type="submit" disabled={loading} className={`border-2 ${isDarkMode ? 'border-white bg-white text-black hover:bg-black hover:text-white' : 'border-black bg-black text-white hover:bg-white hover:text-black'} px-8 py-3 text-base font-mono transition-all duration-300 w-full md:w-auto disabled:opacity-50`}>
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? t.sending : t.sendMessageBtn}
             </button>
           </form>
         </div>
@@ -139,10 +143,23 @@ export default function Contact() {
             <Globe size={20} />
           </button>
           {showLanguageModal && (
-            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded p-2 shadow-lg min-w-24`}>
-              <button onClick={() => { setCurrentLanguage('EN'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'EN' ? 'font-bold' : ''}`}>EN</button>
-              <button onClick={() => { setCurrentLanguage('ES'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'ES' ? 'font-bold' : ''}`}>ES</button>
-              <button onClick={() => { setCurrentLanguage('FR'); setShowLanguageModal(false); }} className={`block w-full text-left px-3 py-1 text-sm font-mono ${isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100'} ${currentLanguage === 'FR' ? 'font-bold' : ''}`}>FR</button>
+            <div className={`absolute bottom-14 right-0 ${isDarkMode ? 'bg-black border-white' : 'bg-white border-black'} border-2 rounded-lg p-2 shadow-lg min-w-[120px]`}>
+              {Object.entries(languages).map(([code, name]) => (
+                <button
+                  key={code}
+                  onClick={() => {
+                    changeLanguage(code as Language);
+                    setShowLanguageModal(false);
+                  }}
+                  className={`block w-full text-left px-3 py-2 text-sm font-mono transition-colors ${
+                    lang === code 
+                      ? (isDarkMode ? 'bg-white text-black' : 'bg-black text-white')
+                      : (isDarkMode ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100')
+                  }`}
+                >
+                  {name}
+                </button>
+              ))}
             </div>
           )}
         </div>
