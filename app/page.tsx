@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { ArrowUp, Globe, Sun, Moon } from "lucide-react";
+import { ArrowUp, Globe, Sun, Moon, MapPin } from "lucide-react";
 import { useTheme } from "./useTheme";
 
 export default function Home() {
@@ -122,8 +122,14 @@ export default function Home() {
                   isDarkMode ? "text-white" : "text-black"
                 } opacity-70`}
               >
-                Senior Software Developer
+                Software Developer
               </h2>
+              <div className="flex items-center gap-1 mt-1">
+                <MapPin size={14} className={`${isDarkMode ? "text-white" : "text-black"} opacity-60`} />
+                <p className={`text-sm font-mono ${isDarkMode ? "text-white" : "text-black"} opacity-60`}>
+                  Glasgow, Scotland, UK
+                </p>
+              </div>
             </div>
           </div>
 
