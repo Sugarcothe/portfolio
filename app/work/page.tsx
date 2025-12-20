@@ -130,6 +130,12 @@ export default function Work() {
             <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>Live Projects</h1>
             <div className="space-y-6">
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
+                <a href="https://evenx.site" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>evenx.site</a>
+                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Event Management Platform | Ticketing | Event Analytics</p>
+                <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Nigeria</p>
+              </div>
+
+              <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://poll.votemaster.co.uk" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>poll.votemaster.co.uk</a>
                 <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Poll | Customer Rating System</p>
                 <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Manchester, United Kingdom</p>
