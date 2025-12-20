@@ -104,13 +104,22 @@ export default function BlogClient({ blog }: { blog: Blog }) {
   };
 
   return (
-    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.work}</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.contact}</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.work}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.writing}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.contact}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
         </div>
       </nav>
 

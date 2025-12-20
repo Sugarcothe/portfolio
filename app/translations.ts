@@ -44,6 +44,25 @@ export const translations = {
     liveProjects: 'Live Projects',
     certificates: 'Certificates',
     
+    // Project descriptions
+    evenxDesc: 'Event Management Platform | Ticketing | Event Analytics',
+    pollDesc: 'Poll | Customer Rating System',
+    prevailDesc: 'Digital Accelerator | SaaS | Digital Marketing website',
+    rexaDesc: 'Product Development | Cloud Solution | Tech Consulting',
+    
+    // Certificate list
+    cert1: 'Cloud DevOps Engineer',
+    cert2: 'Software Development Fundamentals',
+    cert3: 'Networking Fundamentals',
+    cert4: 'AWS: Addressing Security Risk | Coursera',
+    cert5: 'React Basic | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Certified Foundations Associate',
+    cert7: 'Database Fundamentals',
+    cert8: 'Introduction to Cloud Computing',
+    cert9: 'Security Fundamentals',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Writing',
     newsletterTitle: 'Newsletter',
@@ -83,7 +102,31 @@ export const translations = {
     // Common
     loading: 'Loading...',
     error: 'Error',
-    success: 'Success'
+    success: 'Success',
+    
+    // Job responsibilities
+    job1_resp1: 'Designed and developed robust, scalable, and secure web applications across the full stack (front-end, back-end, and database).',
+    job1_resp2: 'Defined system architecture, wrote clean and maintainable code, and enforced engineering best practices to ensure code quality.',
+    job1_resp3: 'Collaborated with UI/UX designers, product managers, and other engineers to translate requirements into functional solutions.',
+    job1_resp4: 'Optimized and maintained applications to ensure high performance, troubleshoot issues, and continuously improve scalability and efficiency.',
+    job1_resp5: 'Provided technical leadership and mentorship, conducted code reviews, and guided junior developers to enhance team capability.',
+    job2_resp1: 'Supported CI/CD pipeline implementation, enhancing software delivery efficiency and reducing errors.',
+    job2_resp2: 'Assisted in adopting IaC principles, streamlining resource management processes with a good improvement in provisioning time.',
+    job2_resp3: 'Contributed to the implementation of proactive monitoring solutions, reducing system downtime.',
+    job2_resp4: 'Administered and secured NGINX for load balancing, reverse proxy, and application delivery.',
+    job2_resp5: 'Developed and consumed RESTful APIs, enabling seamless communication between services.',
+    job2_resp6: 'Applied strong understanding of TCP/IP, DNS, HTTP, SMTP, TLS/SSL, and PKI to design secure and reliable networked applications.',
+    job3_resp1: 'Designed and delivered Full-Stack Development courses covering HTML, CSS, JavaScript, React, and Node.js. Helped students build real-world applications with clean coding practices.',
+    job3_resp2: 'Taught practical coding sessions using React, Express.js, and APIs, focusing on cloud deployment and version control with Git.',
+    job3_resp3: 'Guided students in building frontend and backend projects while providing career coaching on portfolios, debugging, and agile workflows.',
+    job3_resp4: 'Delivered lessons on React, Docker, Firebase, and AWS, organizing workshops to teach scalable application development.',
+    job3_resp5: 'Mentored students to create complete applications, focusing on responsive design, API integration, and agile project management.',
+    job3_resp6: 'Also introduced the student into Cloud Computing Technology',
+    job4_resp1: 'Designed and implemented user-friendly frontend features using modern JavaScript frameworks like React, and NextJs.',
+    job4_resp2: 'Developed scalable backend services and RESTful APIs using technologies like Node.js and Python, with a 60% focus on backend development.',
+    job4_resp3: 'Implemented seamless integration between frontend and backend components to deliver cohesive user experiences and optimize system performance.',
+    job4_resp4: 'Performed Micro Frontend to increase speed for user experience.',
+    job4_resp5: 'Optimized application for security and scalability, through proper authentication, encryption, validation, session, and understanding threat models.'
   },
   
   es: {
@@ -129,6 +172,25 @@ export const translations = {
     liveProjects: 'Proyectos en Vivo',
     certificates: 'Certificados',
     
+    // Project descriptions
+    evenxDesc: 'Plataforma de Gestión de Eventos | Ticketing | Analíticas de Eventos',
+    pollDesc: 'Encuestas | Sistema de Calificación de Clientes',
+    prevailDesc: 'Acelerador Digital | SaaS | Sitio web de Marketing Digital',
+    rexaDesc: 'Desarrollo de Productos | Solución en la Nube | Consultoría Técnica',
+    
+    // Certificate list
+    cert1: 'Ingeniero DevOps en la Nube',
+    cert2: 'Fundamentos de Desarrollo de Software',
+    cert3: 'Fundamentos de Redes',
+    cert4: 'AWS: Abordando Riesgos de Seguridad | Coursera',
+    cert5: 'React Básico | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Asociado Certificado en Fundamentos',
+    cert7: 'Fundamentos de Bases de Datos',
+    cert8: 'Introducción a la Computación en la Nube',
+    cert9: 'Fundamentos de Seguridad',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Escritura',
     newsletterTitle: 'Boletín',
@@ -168,7 +230,31 @@ export const translations = {
     // Common
     loading: 'Cargando...',
     error: 'Error',
-    success: 'Éxito'
+    success: 'Éxito',
+    
+    // Job responsibilities
+    job1_resp1: 'Diseñé y desarrollé aplicaciones web robustas, escalables y seguras en todo el stack completo (front-end, back-end y base de datos).',
+    job1_resp2: 'Definí la arquitectura del sistema, escribí código limpio y mantenible, y apliqué las mejores prácticas de ingeniería para asegurar la calidad del código.',
+    job1_resp3: 'Colaboré con diseñadores UI/UX, gerentes de producto y otros ingenieros para traducir requisitos en soluciones funcionales.',
+    job1_resp4: 'Optimicé y mantuve aplicaciones para asegurar alto rendimiento, solucionar problemas y mejorar continuamente la escalabilidad y eficiencia.',
+    job1_resp5: 'Proporcioné liderazgo técnico y mentoría, realicé revisiones de código y guié a desarrolladores junior para mejorar la capacidad del equipo.',
+    job2_resp1: 'Apoyé la implementación de pipelines CI/CD, mejorando la eficiencia de entrega de software y reduciendo errores.',
+    job2_resp2: 'Asistí en la adopción de principios IaC, optimizando procesos de gestión de recursos con una buena mejora en el tiempo de aprovisionamiento.',
+    job2_resp3: 'Contribuí a la implementación de soluciones de monitoreo proactivo, reduciendo el tiempo de inactividad del sistema.',
+    job2_resp4: 'Administré y aseguré NGINX para balanceamiento de carga, proxy inverso y entrega de aplicaciones.',
+    job2_resp5: 'Desarrollé y consumí APIs RESTful, habilitando comunicación fluida entre servicios.',
+    job2_resp6: 'Apliqué un fuerte entendimiento de TCP/IP, DNS, HTTP, SMTP, TLS/SSL y PKI para diseñar aplicaciones de red seguras y confiables.',
+    job3_resp1: 'Diseñé e impartí cursos de Desarrollo Full-Stack cubriendo HTML, CSS, JavaScript, React y Node.js. Ayudé a estudiantes a construir aplicaciones del mundo real con prácticas de codificación limpia.',
+    job3_resp2: 'Enseñé sesiones prácticas de codificación usando React, Express.js y APIs, enfocándome en despliegue en la nube y control de versiones con Git.',
+    job3_resp3: 'Guié a estudiantes en la construcción de proyectos frontend y backend mientras proporcionaba coaching profesional en portafolios, depuración y flujos de trabajo ágiles.',
+    job3_resp4: 'Impartí lecciones sobre React, Docker, Firebase y AWS, organizando talleres para enseñar desarrollo de aplicaciones escalables.',
+    job3_resp5: 'Mentoré estudiantes para crear aplicaciones completas, enfocándome en diseño responsivo, integración de APIs y gestión de proyectos ágiles.',
+    job3_resp6: 'También introduje a los estudiantes en la Tecnología de Computación en la Nube',
+    job4_resp1: 'Diseñé e implementé características frontend amigables al usuario usando frameworks modernos de JavaScript como React y NextJs.',
+    job4_resp2: 'Desarrollé servicios backend escalables y APIs RESTful usando tecnologías como Node.js y Python, con un 60% de enfoque en desarrollo backend.',
+    job4_resp3: 'Implementé integración fluida entre componentes frontend y backend para entregar experiencias de usuario cohesivas y optimizar el rendimiento del sistema.',
+    job4_resp4: 'Realicé Micro Frontend para aumentar la velocidad para la experiencia del usuario.',
+    job4_resp5: 'Optimicé aplicaciones para seguridad y escalabilidad, a través de autenticación adecuada, encriptación, validación, sesiones y comprensión de modelos de amenazas.'
   },
   
   fr: {
@@ -214,6 +300,25 @@ export const translations = {
     liveProjects: 'Projets en Direct',
     certificates: 'Certificats',
     
+    // Project descriptions
+    evenxDesc: 'Plateforme de Gestion d\'Evénements | Billetterie | Analytiques d\'Evénements',
+    pollDesc: 'Sondages | Système d\'Evaluation Client',
+    prevailDesc: 'Accélérateur Numérique | SaaS | Site web de Marketing Numérique',
+    rexaDesc: 'Développement de Produits | Solution Cloud | Conseil Technique',
+    
+    // Certificate list
+    cert1: 'Ingénieur DevOps Cloud',
+    cert2: 'Fondamentaux du Développement Logiciel',
+    cert3: 'Fondamentaux des Réseaux',
+    cert4: 'AWS: Adresser les Risques de Sécurité | Coursera',
+    cert5: 'React de Base | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Associé Certifié Fondamentaux',
+    cert7: 'Fondamentaux des Bases de Données',
+    cert8: 'Introduction au Cloud Computing',
+    cert9: 'Fondamentaux de Sécurité',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Écriture',
     newsletterTitle: 'Newsletter',
@@ -253,7 +358,20 @@ export const translations = {
     // Common
     loading: 'Chargement...',
     error: 'Erreur',
-    success: 'Succès'
+    success: 'Succès',
+    
+    // Job responsibilities
+    job1_resp1: 'Conçu et développé des applications web robustes, évolutives et sécurisées sur toute la pile complète (front-end, back-end et base de données).',
+    job1_resp2: 'Défini l\'architecture système, écrit du code propre et maintenable, et appliqué les meilleures pratiques d\'ingénierie pour assurer la qualité du code.',
+    job1_resp3: 'Collaboré avec les designers UI/UX, chefs de produit et autres ingénieurs pour traduire les exigences en solutions fonctionnelles.',
+    job1_resp4: 'Optimisé et maintenu les applications pour assurer de hautes performances, résoudre les problèmes et améliorer continuellement l\'évolutivité et l\'efficacité.',
+    job1_resp5: 'Fourni un leadership technique et du mentorat, effectué des revues de code et guidé les développeurs juniors pour améliorer les capacités de l\'équipe.',
+    job2_resp1: 'Soutenu l\'implémentation de pipelines CI/CD, améliorant l\'efficacité de livraison logicielle et réduisant les erreurs.',
+    job2_resp2: 'Assisté dans l\'adoption des principes IaC, rationalisant les processus de gestion des ressources avec une bonne amélioration du temps d\'approvisionnement.',
+    job2_resp3: 'Contribué à l\'implémentation de solutions de surveillance proactive, réduisant les temps d\'arrêt système.',
+    job2_resp4: 'Administré et sécurisé NGINX pour l\'équilibrage de charge, proxy inverse et livraison d\'applications.',
+    job2_resp5: 'Développé et consommé des APIs RESTful, permettant une communication fluide entre services.',
+    job2_resp6: 'Appliqué une forte compréhension de TCP/IP, DNS, HTTP, SMTP, TLS/SSL et PKI pour concevoir des applications réseau sécurisées et fiables.'
   },
   
   de: {
@@ -299,6 +417,25 @@ export const translations = {
     liveProjects: 'Live-Projekte',
     certificates: 'Zertifikate',
     
+    // Project descriptions
+    evenxDesc: 'Event-Management-Plattform | Ticketing | Event-Analytik',
+    pollDesc: 'Umfragen | Kundenbewertungssystem',
+    prevailDesc: 'Digitaler Beschleuniger | SaaS | Digital Marketing Website',
+    rexaDesc: 'Produktentwicklung | Cloud-Lösung | Technische Beratung',
+    
+    // Certificate list
+    cert1: 'Cloud DevOps Ingenieur',
+    cert2: 'Software-Entwicklung Grundlagen',
+    cert3: 'Netzwerk-Grundlagen',
+    cert4: 'AWS: Sicherheitsrisiken Adressieren | Coursera',
+    cert5: 'React Grundlagen | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Zertifizierter Grundlagen-Assistent',
+    cert7: 'Datenbank-Grundlagen',
+    cert8: 'Einführung in Cloud Computing',
+    cert9: 'Sicherheits-Grundlagen',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Schreiben',
     newsletterTitle: 'Newsletter',
@@ -338,7 +475,20 @@ export const translations = {
     // Common
     loading: 'Laden...',
     error: 'Fehler',
-    success: 'Erfolg'
+    success: 'Erfolg',
+    
+    // Job responsibilities
+    job1_resp1: 'Robuste, skalierbare und sichere Webanwendungen über den gesamten Stack (Frontend, Backend und Datenbank) entworfen und entwickelt.',
+    job1_resp2: 'Systemarchitektur definiert, sauberen und wartbaren Code geschrieben und Engineering-Best-Practices durchgesetzt, um Codequalität zu gewährleisten.',
+    job1_resp3: 'Mit UI/UX-Designern, Produktmanagern und anderen Ingenieuren zusammengearbeitet, um Anforderungen in funktionale Lösungen zu übersetzen.',
+    job1_resp4: 'Anwendungen optimiert und gewartet, um hohe Leistung zu gewährleisten, Probleme zu beheben und Skalierbarkeit und Effizienz kontinuierlich zu verbessern.',
+    job1_resp5: 'Technische Führung und Mentoring bereitgestellt, Code-Reviews durchgeführt und Junior-Entwickler angeleitet, um die Teamfähigkeit zu verbessern.',
+    job2_resp1: 'CI/CD-Pipeline-Implementierung unterstützt, Software-Liefereffizienz verbessert und Fehler reduziert.',
+    job2_resp2: 'Bei der Einführung von IaC-Prinzipien geholfen, Ressourcenverwaltungsprozesse rationalisiert mit guter Verbesserung der Bereitstellungszeit.',
+    job2_resp3: 'Zur Implementierung proaktiver Überwachungslösungen beigetragen, Systemausfallzeiten reduziert.',
+    job2_resp4: 'NGINX für Load Balancing, Reverse Proxy und Anwendungsbereitstellung verwaltet und gesichert.',
+    job2_resp5: 'RESTful APIs entwickelt und konsumiert, nahtlose Kommunikation zwischen Services ermöglicht.',
+    job2_resp6: 'Starkes Verständnis von TCP/IP, DNS, HTTP, SMTP, TLS/SSL und PKI angewendet, um sichere und zuverlässige Netzwerkanwendungen zu entwerfen.'
   },
   
   it: {
@@ -384,6 +534,25 @@ export const translations = {
     liveProjects: 'Progetti Live',
     certificates: 'Certificati',
     
+    // Project descriptions
+    evenxDesc: 'Piattaforma di Gestione Eventi | Biglietteria | Analitiche Eventi',
+    pollDesc: 'Sondaggi | Sistema di Valutazione Clienti',
+    prevailDesc: 'Acceleratore Digitale | SaaS | Sito web di Marketing Digitale',
+    rexaDesc: 'Sviluppo Prodotti | Soluzione Cloud | Consulenza Tecnica',
+    
+    // Certificate list
+    cert1: 'Ingegnere DevOps Cloud',
+    cert2: 'Fondamenti di Sviluppo Software',
+    cert3: 'Fondamenti di Networking',
+    cert4: 'AWS: Affrontare i Rischi di Sicurezza | Coursera',
+    cert5: 'React Base | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Associato Certificato Fondamenti',
+    cert7: 'Fondamenti di Database',
+    cert8: 'Introduzione al Cloud Computing',
+    cert9: 'Fondamenti di Sicurezza',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Scrittura',
     newsletterTitle: 'Newsletter',
@@ -423,7 +592,20 @@ export const translations = {
     // Common
     loading: 'Caricamento...',
     error: 'Errore',
-    success: 'Successo'
+    success: 'Successo',
+    
+    // Job responsibilities
+    job1_resp1: 'Progettato e sviluppato applicazioni web robuste, scalabili e sicure su tutto lo stack completo (front-end, back-end e database).',
+    job1_resp2: 'Definito l\'architettura del sistema, scritto codice pulito e manutenibile, e applicato le migliori pratiche di ingegneria per garantire la qualità del codice.',
+    job1_resp3: 'Collaborato con designer UI/UX, product manager e altri ingegneri per tradurre i requisiti in soluzioni funzionali.',
+    job1_resp4: 'Ottimizzato e mantenuto applicazioni per garantire alte prestazioni, risolvere problemi e migliorare continuamente scalabilità ed efficienza.',
+    job1_resp5: 'Fornito leadership tecnica e mentoring, condotto code review e guidato sviluppatori junior per migliorare le capacità del team.',
+    job2_resp1: 'Supportato l\'implementazione di pipeline CI/CD, migliorando l\'efficienza di consegna software e riducendo gli errori.',
+    job2_resp2: 'Assistito nell\'adozione dei principi IaC, semplificando i processi di gestione delle risorse con un buon miglioramento nei tempi di provisioning.',
+    job2_resp3: 'Contribuito all\'implementazione di soluzioni di monitoraggio proattivo, riducendo i tempi di inattività del sistema.',
+    job2_resp4: 'Amministrato e messo in sicurezza NGINX per bilanciamento del carico, reverse proxy e consegna applicazioni.',
+    job2_resp5: 'Sviluppato e consumato API RESTful, abilitando comunicazione fluida tra servizi.',
+    job2_resp6: 'Applicato una forte comprensione di TCP/IP, DNS, HTTP, SMTP, TLS/SSL e PKI per progettare applicazioni di rete sicure e affidabili.'
   },
   
   pt: {
@@ -469,6 +651,25 @@ export const translations = {
     liveProjects: 'Projetos ao Vivo',
     certificates: 'Certificados',
     
+    // Project descriptions
+    evenxDesc: 'Plataforma de Gestão de Eventos | Ticketing | Analíticas de Eventos',
+    pollDesc: 'Enquetes | Sistema de Avaliação de Clientes',
+    prevailDesc: 'Acelerador Digital | SaaS | Site de Marketing Digital',
+    rexaDesc: 'Desenvolvimento de Produtos | Solução em Nuvem | Consultoria Técnica',
+    
+    // Certificate list
+    cert1: 'Engenheiro DevOps em Nuvem',
+    cert2: 'Fundamentos de Desenvolvimento de Software',
+    cert3: 'Fundamentos de Redes',
+    cert4: 'AWS: Abordando Riscos de Segurança | Coursera',
+    cert5: 'React Básico | HackerRank',
+    cert6: 'Oracle Cloud Infrastructure 2023 Associado Certificado em Fundamentos',
+    cert7: 'Fundamentos de Banco de Dados',
+    cert8: 'Introdução à Computação em Nuvem',
+    cert9: 'Fundamentos de Segurança',
+    cert10: 'AWS Cloud Technical Essentials | Coursera',
+    cert11: 'Javascript | HackerRank',
+    
     // Writing page
     writingTitle: 'Escrita',
     newsletterTitle: 'Newsletter',
@@ -508,7 +709,20 @@ export const translations = {
     // Common
     loading: 'Carregando...',
     error: 'Erro',
-    success: 'Sucesso'
+    success: 'Sucesso',
+    
+    // Job responsibilities
+    job1_resp1: 'Projetei e desenvolvi aplicações web robustas, escaláveis e seguras em toda a pilha completa (front-end, back-end e banco de dados).',
+    job1_resp2: 'Defini a arquitetura do sistema, escrevi código limpo e manutenível, e apliquei as melhores práticas de engenharia para garantir a qualidade do código.',
+    job1_resp3: 'Colaborei com designers UI/UX, gerentes de produto e outros engenheiros para traduzir requisitos em soluções funcionais.',
+    job1_resp4: 'Otimizei e mantive aplicações para garantir alto desempenho, solucionar problemas e melhorar continuamente a escalabilidade e eficiência.',
+    job1_resp5: 'Forneci liderança técnica e mentoria, conduzi revisões de código e orientei desenvolvedores juniores para melhorar a capacidade da equipe.',
+    job2_resp1: 'Apoiei a implementação de pipelines CI/CD, melhorando a eficiência de entrega de software e reduzindo erros.',
+    job2_resp2: 'Auxiliei na adoção de princípios IaC, simplificando processos de gestão de recursos com uma boa melhoria no tempo de provisionamento.',
+    job2_resp3: 'Contribuí para a implementação de soluções de monitoramento proativo, reduzindo o tempo de inatividade do sistema.',
+    job2_resp4: 'Administrei e protegi NGINX para balanceamento de carga, proxy reverso e entrega de aplicações.',
+    job2_resp5: 'Desenvolvi e consumi APIs RESTful, permitindo comunicação perfeita entre serviços.',
+    job2_resp6: 'Apliquei forte compreensão de TCP/IP, DNS, HTTP, SMTP, TLS/SSL e PKI para projetar aplicações de rede seguras e confiáveis.'
   }
 };
 

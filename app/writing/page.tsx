@@ -98,13 +98,23 @@ export default function Writing() {
   };
 
   return (
-    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.work}</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>{t.writing}</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.contact}</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.work}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.writing}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+            <span className={`absolute left-0 bottom-0 w-full h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'}`}></span>
+          </Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.contact}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
         </div>
       </nav>
 
@@ -142,7 +152,7 @@ export default function Writing() {
               <>
                 <p className={`text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mb-6`}>{t.newsletterDescription}</p>
                 <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row gap-4">
-                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t.emailPlaceholder} required className={`flex-1 border-2 ${isDarkMode ? 'border-white bg-black text-white' : 'border-black bg-white text-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2 ${isDarkMode ? 'focus:ring-white' : 'focus:ring-black'}`} />
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t.emailPlaceholder} required className={`flex-1 border-2 ${isDarkMode ? 'border-white bg-black text-white' : 'border-black bg-[#E9E9E9] text-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2 ${isDarkMode ? 'focus:ring-white' : 'focus:ring-black'}`} />
                   <button type="submit" disabled={loading} className={`border-2 ${isDarkMode ? 'border-white bg-white text-black hover:bg-black hover:text-white' : 'border-black bg-black text-white hover:bg-white hover:text-black'} px-8 py-3 text-base font-mono transition-all duration-300 disabled:opacity-50`}>{loading ? t.subscribing : t.subscribe}</button>
                 </form>
               </>

@@ -20,7 +20,7 @@
 }
 
 body {
-  background: white;
+  background: #E9E9E9;
   color: black;
   font-family: Georgia, serif;
 }
@@ -40,6 +40,6 @@ body.dark-theme {
 }
 
 body.light-theme {
-  background: white !important;
+  background: #E9E9E9 !important;
   color: black !important;
 }

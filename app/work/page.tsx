@@ -95,13 +95,23 @@ export default function Work() {
   }, [showLanguageModal, showThemeModal]);
 
   return (
-    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>{t.work}</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.contact}</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.work}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+            <span className={`absolute left-0 bottom-0 w-full h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'}`}></span>
+          </Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.writing}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.contact}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
         </div>
       </nav>
 
@@ -121,9 +131,12 @@ export default function Work() {
                   )}
                 </div>
                 <ul className={`list-disc list-inside space-y-2 text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 leading-relaxed ml-4`}>
-                  {job.responsibilities.map((responsibility, idx) => (
-                    <li key={idx}>{responsibility}</li>
-                  ))}
+                  {job.responsibilities.map((responsibility, idx) => {
+                    const jobKey = `job${index + 1}_resp${idx + 1}` as keyof typeof t;
+                    return (
+                      <li key={idx}>{t[jobKey] || responsibility}</li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -134,25 +147,25 @@ export default function Work() {
             <div className="space-y-6">
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://evenx.site" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>evenx.site</a>
-                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Event Management Platform | Ticketing | Event Analytics</p>
+                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>{t.evenxDesc}</p>
                 <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Nigeria</p>
               </div>
 
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://poll.votemaster.co.uk" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>poll.votemaster.co.uk</a>
-                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Poll | Customer Rating System</p>
+                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>{t.pollDesc}</p>
                 <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Manchester, United Kingdom</p>
               </div>
 
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://prevailagency.ie" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>prevailagency.ie</a>
-                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Digital Accelerator | SaaS | Digital Marketing website</p>
+                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>{t.prevailDesc}</p>
                 <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Cork, Ireland</p>
               </div>
 
               <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-200'} pb-6`}>
                 <a href="https://rexaconsult.com" target="_blank" rel="noopener noreferrer" className={`text-lg md:text-xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>rexaconsult.com</a>
-                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>Product Development | Cloud Solution | Tech Consulting</p>
+                <p className={`text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 mt-2`}>{t.rexaDesc}</p>
                 <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-black'} opacity-60 mt-1`}>Lagos, Nigeria</p>
               </div>
 
@@ -166,17 +179,17 @@ export default function Work() {
           <div className="mt-16">
             <h1 className={`text-3xl md:text-4xl font-mono ${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-8`}>{t.certificates}</h1>
             <ul className={`list-disc list-inside space-y-2 text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'} opacity-80 leading-relaxed ml-4`}>
-              <li>Cloud DevOps Engineer</li>
-              <li>Software Development Fundamentals</li>
-              <li>Networking Fundamentals</li>
-              <li>AWS: Addressing Security Risk | Coursera</li>
-              <li>React Basic | HackerRank</li>
-              <li>Oracle Cloud Infrastructure 2023 Certified Foundations Associate</li>
-              <li>Database Fundamentals</li>
-              <li>Introduction to Cloud Computing</li>
-              <li>Security Fundamentals</li>
-              <li>AWS Cloud Technical Essentials | Coursera</li>
-              <li>Javascript | HackerRank</li>
+              <li>{t.cert1}</li>
+              <li>{t.cert2}</li>
+              <li>{t.cert3}</li>
+              <li>{t.cert4}</li>
+              <li>{t.cert5}</li>
+              <li>{t.cert6}</li>
+              <li>{t.cert7}</li>
+              <li>{t.cert8}</li>
+              <li>{t.cert9}</li>
+              <li>{t.cert10}</li>
+              <li>{t.cert11}</li>
             </ul>
           </div>
         </div>

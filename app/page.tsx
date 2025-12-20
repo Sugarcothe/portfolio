@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div
       className={`min-h-screen font-mono transition-colors ${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        isDarkMode ? "bg-black text-white" : "bg-[#E9E9E9] text-black"
       }`}
     >
       <nav
@@ -72,25 +72,28 @@ export default function Home() {
             href="/work"
             className={`${
               isDarkMode ? "text-white" : "text-black"
-            } hover:underline decoration-2 underline-offset-4`}
+            } relative group transition-colors duration-300`}
           >
             {t.work}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
           </Link>
           <Link
             href="/writing"
             className={`${
               isDarkMode ? "text-white" : "text-black"
-            } hover:underline decoration-2 underline-offset-4`}
+            } relative group transition-colors duration-300`}
           >
             {t.writing}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
           </Link>
           <Link
             href="/contact"
             className={`${
               isDarkMode ? "text-white" : "text-black"
-            } hover:underline decoration-2 underline-offset-4`}
+            } relative group transition-colors duration-300`}
           >
             {t.contact}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
           </Link>
         </div>
       </nav>

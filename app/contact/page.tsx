@@ -73,13 +73,23 @@ export default function Contact() {
   };
 
   return (
-    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen font-mono transition-colors ${isDarkMode ? 'bg-black text-white' : 'bg-[#E9E9E9] text-black'}`}>
       <nav className={`flex items-center justify-between px-4 md:px-12 py-6 md:py-8 border-b ${isDarkMode ? 'border-white' : 'border-gray-200'}`}>
         <Link href="/" className={`text-xl md:text-2xl font-mono ${isDarkMode ? 'text-white' : 'text-black'}`}>V|E</Link>
         <div className="flex gap-4 md:gap-12 text-sm md:text-lg">
-          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.work}</Link>
-          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline decoration-2 underline-offset-4`}>{t.writing}</Link>
-          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} underline decoration-2 underline-offset-4`}>{t.contact}</Link>
+          <Link href="/work" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.work}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/writing" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.writing}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+          </Link>
+          <Link href="/contact" className={`${isDarkMode ? 'text-white' : 'text-black'} relative group transition-colors duration-300`}>
+            {t.contact}
+            <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'} transition-all duration-300 group-hover:w-full`}></span>
+            <span className={`absolute left-0 bottom-0 w-full h-0.5 ${isDarkMode ? 'bg-white' : 'bg-black'}`}></span>
+          </Link>
         </div>
       </nav>
 
@@ -109,15 +119,15 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className={`border-2 ${isDarkMode ? 'border-white' : 'border-black'} p-6 md:p-8 space-y-6`}>
             <div>
               <label htmlFor="name" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.name}</label>
-              <input type="text" id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
+              <input type="text" id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-[#E9E9E9] text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
             </div>
             <div>
               <label htmlFor="email" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.email}</label>
-              <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
+              <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-[#E9E9E9] text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2`} />
             </div>
             <div>
               <label htmlFor="message" className={`block text-sm font-mono ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{t.message}</label>
-              <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={6} className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-white text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2 resize-none`} />
+              <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={6} className={`w-full border-2 ${isDarkMode ? 'border-white bg-black text-white focus:ring-white' : 'border-black bg-[#E9E9E9] text-black focus:ring-black'} px-4 py-3 text-base font-mono focus:outline-none focus:ring-2 resize-none`} />
             </div>
             <button type="submit" disabled={loading} className={`border-2 ${isDarkMode ? 'border-white bg-white text-black hover:bg-black hover:text-white' : 'border-black bg-black text-white hover:bg-white hover:text-black'} px-8 py-3 text-base font-mono transition-all duration-300 w-full md:w-auto disabled:opacity-50`}>
               {loading ? t.sending : t.sendMessageBtn}
