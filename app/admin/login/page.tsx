@@ -74,9 +74,9 @@ export default function AdminLogin() {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
-          <p className={`text-center text-sm ${isDarkMode ? 'text-white' : 'text-black'}`}>
+          {/* <p className={`text-center text-sm ${isDarkMode ? 'text-white' : 'text-black'}`}>
             Don't have an account? <Link href="/admin/signup" className="underline">Sign up</Link>
-          </p>
+          </p> */}
         </form>
       </div>
     </div>
