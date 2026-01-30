@@ -9,7 +9,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Software Developer',
-    location: 'Glasgow, Scotland, UK',
+    location: 'Lagos, Nigeria',
     aboutMe: 'About Me',
     workExperience: 'Work Experience',
     letsConnect: "Let's Connect",
@@ -137,7 +137,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Desarrollador de Software',
-    location: 'Glasgow, Escocia, Reino Unido',
+    location: 'Lagos, Nigeria',
     aboutMe: 'Sobre Mí',
     workExperience: 'Experiencia Laboral',
     letsConnect: 'Conectemos',
@@ -265,7 +265,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Développeur Logiciel',
-    location: 'Glasgow, Écosse, Royaume-Uni',
+    location: 'Lagos, Nigeria',
     aboutMe: 'À Propos de Moi',
     workExperience: 'Expérience Professionnelle',
     letsConnect: 'Connectons-nous',
@@ -382,7 +382,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Software-Entwickler',
-    location: 'Glasgow, Schottland, Vereinigtes Königreich',
+    location: 'Lagos, Nigeria',
     aboutMe: 'Über Mich',
     workExperience: 'Berufserfahrung',
     letsConnect: 'Lass uns Verbinden',
@@ -499,7 +499,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Sviluppatore Software',
-    location: 'Glasgow, Scozia, Regno Unito',
+    location: 'Lagos, Nigeria',
     aboutMe: 'Chi Sono',
     workExperience: 'Esperienza Lavorativa',
     letsConnect: 'Connettiamoci',
@@ -616,7 +616,7 @@ export const translations = {
     
     // Homepage
     softwareDeveloper: 'Desenvolvedor de Software',
-    location: 'Glasgow, Escócia, Reino Unido',
+    location: 'Lagos, Nigéria',
     aboutMe: 'Sobre Mim',
     workExperience: 'Experiência Profissional',
     letsConnect: 'Vamos nos Conectar',
